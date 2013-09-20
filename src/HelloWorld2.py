@@ -18,22 +18,43 @@ g = rdflib.Graph()
 result = g.parse("http://neurolex.org/wiki/Special:ExportRDF/birnlex_1489", format="application/rdf+xml")
 
 
+#prints the result in a non readable format
+#print("result is in the format:", result)
+#not sure how to convert it yet
+#print("result is in the format:", result)
+
+#print("g.result is:", g[:0])
+
+
+
+
+
 #Ask a specific question about that RDF document
-
 qres = g.query(
-    """SELECT DISTINCT ?x
+    """SELECT DISTINCT ?definition
        WHERE {
-          ?a property:Definition "birnlex_1489"^^xsd:string ?x.
-    	}""",
-    initNs=dict(
-        property=rdflib.Namespace("http://neurolex.org/wiki/Special:URIResolver/birnlex_1489"),
-        wiki=rdflib.Namespace("http://neurolex.org/wiki/Special:URIResolver/")))
+          ?cells property:Definition "birnlex_1489"^^xsd:string ?definition.
+    	}""",)
+    
+    
+    
+    #initNs=dict(
+        #property=rdflib.Namespace("http://neurolex.org/wiki/Special:URIResolver/birnlex_1489"),
+        #wiki=rdflib.Namespace("http://neurolex.org/wiki/Special:URIResolver/")))
+
+#possibilities:
+
+for i in qres:
+	print("Definition: %s" % qres.result[i])
 
 
-#troubleshooting the problem.. trying to find the root
-#print("root is %s" % root[qres.result[:0]])
-#initBindings={'x' : wiki}
+#sparql.setReturnFormat(JSON)
+#results = sparql.query().convert()
+#print("RESULTS $s" %results)
+	
 
 
-#Gives the first property
-print("Definition: %s" % qres.result[0])
+#results = sparql.query().convert()
+
+#for i in results["results"]["bindings"]:
+#	print (i["b"]["definition"])
