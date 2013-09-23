@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 #Unzip_BAMS_Example.py
 
 #For Parsing
 import rdflib
 
 #For Unzipping
-=======
->>>>>>> 63cc95a608e916092a79c751cf666257d93273f2
 import zipfile
 from StringIO import StringIO
 
@@ -19,11 +16,8 @@ r = open("../Data/BAMS1.zip")
 zipdata.write(r.read())
 
 #myzipfile opens the contents of the zip file as an object that knows how
-<<<<<<< HEAD
+
 #to unzip
-=======
-# to unzip
->>>>>>> 63cc95a608e916092a79c751cf666257d93273f2
 myzipfile = zipfile.ZipFile(zipdata)
 
 #grab the contents out of myzipfile by name
@@ -36,7 +30,6 @@ for i, line in enumerate(foofile):
 	else:
 		print line
 
-<<<<<<< HEAD
 #Get a Graph object
 g = rdflib.Graph()
 
@@ -54,6 +47,3 @@ result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), f
 print ("graph has %s statements." % len(g))
 
 foofile.close()
-=======
-foofile.close()
->>>>>>> 63cc95a608e916092a79c751cf666257d93273f2
