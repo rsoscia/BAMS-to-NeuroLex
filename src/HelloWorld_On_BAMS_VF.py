@@ -1,6 +1,6 @@
 import os
-#import zipfile
-from zipfile import ZipFile as zip
+import zipfile
+#from zipfile import ZipFile as zip
 
 
 zipName = zipfile.ZipFile("/Users/ryansoscia/BAMS-to-NeuroLex/Data/")
