@@ -55,12 +55,32 @@ result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), f
 
 print("going to get results...")
 
+#qres = g.query(
+#     """SELECT DISTINCT ?definition
+#       WHERE {
+#          ?cells property:Name "Basal ganglia"^^xsd:string ?definition.
+#    	}""",)
+#    #property:Definition
+    
 qres = g.query(
-     """SELECT DISTINCT ?definition
+     """SELECT DISTINCT ?subject ?predicate ?object
        WHERE {
-          ?cells property:Name "Basal ganglia"^^xsd:string ?definition.
+          ?subject ?predicate ?object.
     	}""",)
-    #property:Definition
+
+#qres = g.query(
+#     """SELECT DISTINCT ?subject ?predicate ?object
+#       WHERE {
+#          ?subject ?predicate ?object.
+#    	} LIMIT 10""",)    	
+
+#If above fails:
+#qres = g.query(
+#     """SELECT DISTINCT ?subject ?predicate ?object
+#       WHERE {
+#          ?subject ?predicate ?object.
+#    	} LIMIT 10""",)    
+    
     
     
     
@@ -82,9 +102,12 @@ print("printing results")
 #for i in qres:
 #	print("Definition: %s" %qres.result[i])
 
-print("Name: %s" %qres.result[0])
+#print("Name: %s" %qres.result[0])
+#TypeError: not all arguments converted during string formatting
 
-print("Name--not necessarily in strign format %s" %qres.result[0])
+
+print("Name--not necessarily in strign format: ")
+print(qres.result[0])
 
 #myzipfile.close('bams_ontology_2013-07-10_03-20-00.xml')
 
