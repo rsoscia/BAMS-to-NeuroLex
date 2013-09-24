@@ -70,4 +70,15 @@ print("printing results")
 #not all results are converted during string formatting
 
 print(qres.result[0])
+#####################
+#######results#######
+#loading up the BAMS file in memory...
+#going to get results...
+#printing results
+#(rdflib.term.URIRef(u'http://brancusi1.usc.edu/RDF/conn_3703'), rdflib.term.URIRef(u'http://brancusi1.usc.edu/RDF/description'), rdflib.term.Literal(u'Case pg302. Soma notes p302: we were unable to confirm that flocculus receives afferents from oculomotor & trochlear nuclei. Terminal notes HRP inj sites in 8 aniamls differed slightly btwn cases but each was confined to the margins of flocculus without spilling into PFLv or brainstem.'))
+
+
+
+
+
 #foofile.close()
