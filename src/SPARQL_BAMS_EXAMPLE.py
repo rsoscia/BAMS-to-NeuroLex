@@ -54,14 +54,20 @@ qres = g.query(
           ?x ?y ?z.
     	} LIMIT 10""",)
 #"birnlex_1489"^^xsd:string
-//could write qres out to a pickle file -- save as a temp file to disk
 
+#####################################################################
+#could write qres out to a pickle file -- save as a temp file to disk
+#####################################################################
 
 print("printing results")
 
 #Search through everything
-for i in qres:
-	print("Definition: %s" % qres.result[i])
+#for i in qres:
+#	print("Definition: %s" %qres.result[i])
+# need to append the rows to fix this error
 
+#print("Definition: %s" %qres.result[0])
+#not all results are converted during string formatting
 
-foofile.close()
+print(qres.result[0])
+#foofile.close()
