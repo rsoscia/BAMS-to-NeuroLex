@@ -108,6 +108,14 @@ print("printing results")
 
 print("Name--not necessarily in strign format: ")
 print(qres.result[0])
+#######RETURNS---TRIPLE#STRUCTURE######
+#(rdflib.term.URIRef(u'http://brancusi1.usc.edu/RDF/conn_11497'), rdflib.term.URIRef(u'http://brancusi1.usc.edu/RDF/technique'), rdflib.term.Literal(u'PHAL'))
+
+print("Normalizing Laterals: ")
+print(normalize(qres.result[0]))
+
+print("Python DataType: ")
+print(toPython(qres.result[0]))
 
 #myzipfile.close('bams_ontology_2013-07-10_03-20-00.xml')
 
