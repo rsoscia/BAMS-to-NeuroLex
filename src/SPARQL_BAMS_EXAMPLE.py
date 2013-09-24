@@ -29,28 +29,35 @@ zipdata.write(r.read())
 myzipfile = zipfile.ZipFile(zipdata)
 
 #grab the contents out of myzipfile by name
-foofile = myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml')
+#foofile = myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml')
 
-print "printing first 10 lines of the zip file"
-for i, line in enumerate(foofile):
-	if i == 10:
-		break
-	else:
-		print line
+#print "printing first 10 lines of the zip file"
+#for i, line in enumerate(foofile):
+#	if i == 100:
+#		break
+#	else:
+#		print line
 
 #Get a Graph object
 g = rdflib.Graph()
 
+print("loading up the BAMS file in memory...")
 
 #pull in an RDF document from NeuroLex, parse, and store.
 result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), format="application/rdf+xml")
 
+print("going to get results...")
+
 qres = g.query(
-    """SELECT DISTINCT ?Defn
+    """SELECT ?x ?y ?z
        WHERE {
-          ?cells property:Name"nervous-system-2"^^xsd:string ?Defn.
-    	}""",)
+          ?x ?y ?z.
+    	} LIMIT 10""",)
 #"birnlex_1489"^^xsd:string
+//could write qres out to a pickle file -- save as a temp file to disk
+
+
+print("printing results")
 
 #Search through everything
 for i in qres:
