@@ -3,6 +3,7 @@
 
 #For Parsing
 import rdflib
+from rdflib import plugin
 
 #for getting the length of the files
 import os
@@ -10,7 +11,6 @@ import os
 #For Unzipping
 import zipfile
 from StringIO import StringIO
-from rdflib import plugin
 
 plugin.register(
     'sparql', rdflib.query.Processor,
@@ -56,19 +56,35 @@ result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), f
 print("going to get results...")
 
 qres = g.query(
-    """SELECT ?x ?y ?z
+     """SELECT DISTINCT ?definition
        WHERE {
-          ?x bams:name "ganglia"^^xsd:string ?z.
-    	} LIMIT 10""",)
-
+          ?cells property:Name "Basal ganglia"^^xsd:string ?definition.
+    	}""",)
+    #property:Definition
+    
+    
+    
+#    """SELECT DISTINCT ?definition
+#       WHERE {
+#          ?cells bams:name "ganglia"^^xsd:string ?definition.
+#    	} LIMIT 10""",)
+ 
+# """SELECT DISTINCT ?definition
+#       WHERE {
+#          ?cells property:Definition "birnlex_1489"^^xsd:string ?definition.
+#    	}""",)
 
 #could write qres out to a pickle file -- save as a temp file to disk
 
 print("printing results")
 
 #Search through everything
-for i in qres:
-	print("Definition: %s" %qres.result[i])
+#for i in qres:
+#	print("Definition: %s" %qres.result[i])
+
+print("Name: %s" %qres.result[0])
+
+print("Name--not necessarily in strign format %s" %qres.result[0])
 
 #myzipfile.close('bams_ontology_2013-07-10_03-20-00.xml')
 
