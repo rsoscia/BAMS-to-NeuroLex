@@ -4,6 +4,8 @@
 #For Parsing
 import rdflib
 from rdflib import plugin
+#from rdflib import Literal, XSD
+#from rdflib.namespace import XSD
 
 #for getting the length of the files
 import os
@@ -107,15 +109,31 @@ print("printing results")
 
 
 print("Name--not necessarily in strign format: ")
-print(qres.result[0])
+#print(qres.result[0])
 #######RETURNS---TRIPLE#STRUCTURE######
 #(rdflib.term.URIRef(u'http://brancusi1.usc.edu/RDF/conn_11497'), rdflib.term.URIRef(u'http://brancusi1.usc.edu/RDF/technique'), rdflib.term.Literal(u'PHAL'))
 
-print("Normalizing Laterals: ")
-print(normalize(qres.result[0]))
 
-print("Python DataType: ")
-print(toPython(qres.result[0]))
+#Hopefully will give us all of the results
+print(qres.result[0])
+print(qres.result[1])
+print(qres.result[2])
+
+print(qres.result[0][0])
+print(qres.result[1][0])
+print(qres.result[2][0])
+
+print(qres.result[0][0])
+print(qres.result[0][1])
+print(qres.result[0][2])
+
+
+
+#Don't have the necessary libraries for these:
+#print("Normalizing Laterals: ")
+#print(normalize(qres.result[0]))
+#print("Python DataType: ")
+#print(toPython(qres.result[0]))
 
 #myzipfile.close('bams_ontology_2013-07-10_03-20-00.xml')
 
