@@ -88,4 +88,20 @@ print("Name--not necessarily in strign format %s" %qres.result[0])
 
 #myzipfile.close('bams_ontology_2013-07-10_03-20-00.xml')
 
+#####################
+#######results#######
+#~40 seconds for zip to open...
+#loading up the BAMS file in memory...
+#going to get results...
+#Traceback (most recent call last):
+#  File "SPARQL_BAMS_Basal_Ganglia.py", line 62, in <module>
+#    }""",)
+#  File "/Library/Python/2.7/site-packages/rdflib/graph.py", line 1045, in query
+#    query_object, initBindings, initNs, **kwargs))
+#  File "/Library/Python/2.7/site-packages/rdfextras/sparql/processor.py", line 49, in query
+#    loadContexts=loadContexts)
+#  File "/Library/Python/2.7/site-packages/rdfextras/sparql/algebra.py", line 406, in TopEvaluate
+#    assert isinstance(expr,AlgebraExpression), repr(expr)
+#AssertionError: None
+
 foofile.close()
