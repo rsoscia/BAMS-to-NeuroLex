@@ -27,7 +27,10 @@ plugin.register(
 zipdata = StringIO()
 
 # open the file using a relative path
-r = open("../Data/BAMS1.zip")
+#r = open("../Data/BAMS1.zip")
+
+# adding the BAMS Thesaurus instead of the more limited set of data:
+r = open("../Data/bams_thesaurus_2013-09-24_17-12-40.xml.zip")
 
 # zipdata is a buffer holding the contents of the zip file in memory
 zipdata.write(r.read())
@@ -38,7 +41,10 @@ print("~40 seconds for zip to open...")
 myzipfile = zipfile.ZipFile(zipdata)
 
 #grab the contents out of myzipfile by name
-foofile = myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml')
+#foofile = myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml')
+
+#changing the foofile to be the file we upen above^^^^^ in r = open()....etc.
+foofile = myzipfile.open('bams_thesaurus_2013-09-24_17-12-40.xml')
 
 print("loading up the BAMS file in memory...")
 
