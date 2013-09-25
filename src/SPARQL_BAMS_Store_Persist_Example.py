@@ -57,7 +57,11 @@ tempStore = op.join( tempfile.gettempdir(), 'myRDF_BAMS_Store')
 g.open(tempStore, create = True)
 
 #pull in the BAMS RDF document, parse, and store.
-result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), format="application/rdf+xml")
+#result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), format="application/rdf+xml")
+
+#do the same thing but with the BAMS thesaurus file
+result = g.parse(file=myzipfile.open('bams_thesaurus_2013-09-24_17-12-40.xml'), format="application/rdf+xml")
+
 
 foofile.close()
 
