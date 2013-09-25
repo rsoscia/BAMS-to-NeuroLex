@@ -1,4 +1,4 @@
-#SPARQL_BAMS_Store_Query_Example
+#SPARQL_BAMS_Store_Query_Example.py
 #This program demonstrates a basic query pulling data out of a persisted SPARQL store
 
 #For Parsing
@@ -51,4 +51,4 @@ print("Name--not necessarily in string format: ")
 print(qres.result[0])
 
 # when done!
-g.close()
+#g.close()
