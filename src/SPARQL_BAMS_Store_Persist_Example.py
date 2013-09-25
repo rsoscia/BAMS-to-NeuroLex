@@ -1,5 +1,6 @@
-#SPARQL_BAMS_Store_Persist_Example
+#SPARQL_BAMS_Store_Persist_Example.py
 #This program is used to open up BAMS data, persist it to a store for speed up of querying
+
 
 #For Parsing
 import rdflib
