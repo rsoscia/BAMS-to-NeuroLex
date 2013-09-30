@@ -1,4 +1,7 @@
 #SPARQL_BAMS_Store_Query_Example.py
+
+#Accessing Python Interactive Mode:
+#python -i SPARQL_BAMS_Store_Query_Example.py
 #This program demonstrates a basic query pulling data out of a persisted SPARQL store
 
 #For Parsing
@@ -52,3 +55,18 @@ print(qres.result[0])
 
 # when done!
 #g.close()
+
+##################################################################
+##################################################################
+#Results from running this program on the BAMS Thesaurus:
+##################################################################
+#loading up the BAMS file in memory...
+#going to get results...
+#printing results
+#The graph has 22176 items in it
+#Name--not necessarily in string format: 
+#(rdflib.term.BNode('Ndf48c09cc76f48c2bc02ca3b687a8d06'), 
+#rdflib.term.URIRef(u'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), 
+#rdflib.term.URIRef(u'file:///anchor'))
+##################################################################
+
