@@ -106,14 +106,15 @@ rdflib.term.Literal(u'Collator note: NIc does not receive projections from this 
 	#Edited the query and formatted it to the example Stephen and I went over
 ####################################################################
 
+prefix bams: <http://brancusi1.usc.edu/RDF/> 
 
 qres = g.query(
-	prefix bams: <http://brancusi1.usc.edu/RDF/>  
+	#prefix bams: <http://brancusi1.usc.edu/RDF/>  
 	#should be accessing "bams" rather than "prefix"... doesn't work though
      """SELECT ?subject ?predicate ?def
        WHERE {
           ?subject ?predicate "Basal ganglia"^^xsd:string .
-          ?subject ?predicate prefix:Definition ?def.
+          ?subject ?predicate bams:Definition ?def.
     	} LIMIT 5""")
 
 print("printing results")
@@ -179,6 +180,22 @@ rdflib.term.Literal(u'Collator note: NIc does not receive projections from this 
 ####################################################################
 ####################################################################
 ####################################################################
+
+
+####################################################################
+####################################################################
+####################################################################
+#Original Query (modified_V2)#######################################
+#Modifications:
+	#Added Prefix
+	#Edited the query and formatted it to the example Stephen and I went over
+####################################################################
+
+
+
+
+
+
 
 
 
