@@ -2,6 +2,12 @@
 #This program is used to open up BAMS data, persist it to a store for speed up of querying
 
 
+#Needed after IPython installation:
+#import sys
+#print(sys.path)
+#shows that the path was changed after downloading anaconda and IPython Notebook
+#sys.path += ['', 'C:\Python27\Lib\idlelib', 'C:\Python27\lib\site-packages\pip-1.1-py2.7.egg', 'C:\Python27\lib\site-packages\gensim-0.8.6-py2.7.egg', 'C:\WINDOWS\system32\python27.zip', 'C:\Python27\DLLs', 'C:\Python27\lib', 'C:\Python27\lib\plat-win', 'C:\Python27\lib\lib-tk', 'C:\Python27', 'C:\Python27\lib\site-packages', 'C:\Python27\lib\site-packages\PIL'] 
+
 #For Parsing
 import rdflib
 from rdflib import plugin
@@ -30,7 +36,10 @@ zipdata = StringIO()
 #r = open("../Data/BAMS1.zip")
 
 # adding the BAMS Thesaurus instead of the more limited set of data:
-r = open("../Data/bams_thesaurus_2013-09-24_17-12-40.xml.zip")
+#r = open("../Data/bams_thesaurus_2013-09-24_17-12-40.xml.zip")
+# Fixed RDF
+r = open("../Data/bams_thesaurus_2013-10-06_14-58-56.xml.zip")
+
 
 # zipdata is a buffer holding the contents of the zip file in memory
 zipdata.write(r.read())
@@ -44,7 +53,9 @@ myzipfile = zipfile.ZipFile(zipdata)
 #foofile = myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml')
 
 #changing the foofile to be the file we upen above^^^^^ in r = open()....etc.
-foofile = myzipfile.open('bams_thesaurus_2013-09-24_17-12-40.xml')
+#foofile = myzipfile.open('bams_thesaurus_2013-09-24_17-12-40.xml')
+# Fixed RDF
+foofile = myzipfile.open('bams_thesaurus_2013-10-06_14-58-56.xml')
 
 print("loading up the BAMS file in memory...")
 
@@ -60,8 +71,9 @@ g.open(tempStore, create = True)
 #result = g.parse(file=myzipfile.open('bams_ontology_2013-07-10_03-20-00.xml'), format="application/rdf+xml")
 
 #do the same thing but with the BAMS thesaurus file
-result = g.parse(file=myzipfile.open('bams_thesaurus_2013-09-24_17-12-40.xml'), format="application/rdf+xml")
-
+#result = g.parse(file=myzipfile.open('bams_thesaurus_2013-09-24_17-12-40.xml'), format="application/rdf+xml")
+# Fixed RDF
+result = g.parse(file=myzipfile.open('bams_thesaurus_2013-10-06_14-58-56.xml'), format="application/rdf+xml")
 
 foofile.close()
 
