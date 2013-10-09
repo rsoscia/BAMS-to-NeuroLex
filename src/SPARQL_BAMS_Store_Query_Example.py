@@ -53,6 +53,9 @@ print("The graph has " + str(len(g)) + " items in it")
 print("Name--not necessarily in string format: ")
 print(qres.result[0])
 
+
+
+
 # when done!
 #g.close()
 
@@ -69,4 +72,39 @@ print(qres.result[0])
 #rdflib.term.URIRef(u'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), 
 #rdflib.term.URIRef(u'file:///anchor'))
 ##################################################################
+
+
+##################################################################
+##################################################################
+##################################################################
+##################################################################
+#Version 1
+#Modified BAMS Query for fixed RDF:
+qres = g.query(
+     """PREFIX bams: <http://brancusi1.usc.edu/thesaurus/definition/>
+       SELECT ?predicate ?object
+       WHERE {
+          bams:corpora-quadrigemina/ ?predicate ?object.
+    	} LIMIT 5""")
+
+for r in qres.result:
+    #print str(r[0]), str(r[1])
+    
+    #added on the object
+    print("added on the object")
+    print str(r[0]), str(r[1]), str(r[2])
+
+#Version 2:
+#Modified BAMS Query for fixed RDF:
+#Instead of this prefix:
+#http://brancusi1.usc.edu/thesaurus/
+#http://brancusi1.usc.edu/RDF/thesaurus
+
+
+
+
+
+
+
+
 
