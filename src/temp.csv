@@ -1,0 +1,12 @@
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei/,http://brancusi1.usc.edu/RDF/workspace,0
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei/,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,http://brancusi1.usc.edu/RDF/thesaurus
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei/,http://brancusi1.usc.edu/RDF/reference,"<a target=""_blank"" href=""/thesaurus/reference/clark-weleg-1951/"">Clark, 1951</a>"
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei/,http://brancusi1.usc.edu/RDF/definition,"Synonym for basal ganglia (Strong & Elwyn, 1943) in macrodissected adult humans, and thus not synonymous with <a href=""/thesaurus/definition/cerebral-nuclei/""><span class=""synonim_bold"">cerebral nuclei (Swanson, 2000)</span></a>; p. 968. Others employing this usage include Warwick & Williams (1973, p. 976; and Williams & Warwick, 1980, p. 1032), International Anatomical Nomenclature Committee (1983, p. A72)."
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei/,http://brancusi1.usc.edu/RDF/entry,Basal nuclei
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei/,http://brancusi1.usc.edu/RDF/slug,basal-nuclei
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei-2/,http://brancusi1.usc.edu/RDF/workspace,0
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei-2/,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,http://brancusi1.usc.edu/RDF/thesaurus
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei-2/,http://brancusi1.usc.edu/RDF/reference,"<a target=""_blank"" href=""/thesaurus/reference/warwick-r-williams-pl-eds-1973/"">Warwick & Williams, 1973</a>"
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei-2/,http://brancusi1.usc.edu/RDF/definition,"Synonym for <a href=""/thesaurus/definition/cerebral-nuclei/""><span class=""synonim_bold"">cerebral nuclei (Swanson, 2000)</span></a>; see Warwick & Williams (1973, p. 805; and Williams & Warwick, 1980, p. 864) and Swanson (1998, p. 200)."
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei-2/,http://brancusi1.usc.edu/RDF/entry,Basal nuclei
+http://brancusi1.usc.edu/thesaurus/definition/basal-nuclei-2/,http://brancusi1.usc.edu/RDF/slug,basal-nuclei-2
