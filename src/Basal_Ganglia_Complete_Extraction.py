@@ -95,6 +95,7 @@ print("Graph stored to disk")
 
 
 ##WORKS PERFECTLY
+##Don't think it works perfectly... needs the persist example from All_Encompassing.py
 
 #########################################################################################
 #########################################################################################
@@ -321,3 +322,48 @@ BELOW IS CODE FOR QUERIES:
 
 #RESULTS FROM COMPARISON OF ADDITIONAL DATA TO THE FIXED BAMS THESAURUS DATA:
 #THEY ARE IDENTICAL (MEANING PRODUCE THE SAME OUTPUTS FORM THE SAME BASAL GANGLIA QUERIES)
+
+
+
+#BEGINNING TO ADD THE CSV CODE:
+import csv
+
+for r in qres.result:
+	#print str(r[0]), str(r[1]), str(r[2])
+	c = csv.writer(open("temp.csv","wb"))
+	
+	# gives us the triple info in each cell (notice it's not in string format) it's pretty ugly
+	#c.writerow(qres.result)
+	# regardless of the format, i'm going to index this first
+	# figure out how to place at the next 
+	
+	# need to access each individual part of the triple
+	# making row plural allows for this type of functionality
+	
+	#subject = (qres.result)
+	#predicate = str(r[1])
+	#object = str(r[2])
+	
+	#c.writerows(subject)
+	
+	c.writerows(qres.result)
+	
+	print("The graph has " + str(len(g)) + " items in it")
+	print("The graph has " + str(len(r)) + " items in it")
+	
+	
+	
+	
+	#c.writerows(str(r[0]))
+	#c.writerows(r[0])
+	#c.writerows(r)
+	
+	
+	#the best way to do this 
+	
+	
+	#c.writerow(r)
+	#c.writecol(qres.result)
+
+
+
