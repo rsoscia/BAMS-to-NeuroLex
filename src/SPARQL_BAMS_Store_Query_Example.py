@@ -53,7 +53,8 @@ print("The graph has " + str(len(g)) + " items in it")
 print("Name--not necessarily in string format: ")
 print(qres.result[0])
 
-
+#The Fixed BAMS Thesaurus Has 178082 Items In It
+#The Additional BAMS Content Has 246200 Items In It
 
 
 # when done!
