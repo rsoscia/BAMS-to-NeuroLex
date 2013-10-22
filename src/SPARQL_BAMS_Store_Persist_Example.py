@@ -1,12 +1,15 @@
 #SPARQL_BAMS_Store_Persist_Example.py
 #This program is used to open up BAMS data, persist it to a store for speed up of querying
-
+#This document is currently working with the Fixed RDF BAMS Thesaurus Data
 
 #Needed after IPython installation:
 #import sys
 #print(sys.path)
 #shows that the path was changed after downloading anaconda and IPython Notebook
 #sys.path += ['', 'C:\Python27\Lib\idlelib', 'C:\Python27\lib\site-packages\pip-1.1-py2.7.egg', 'C:\Python27\lib\site-packages\gensim-0.8.6-py2.7.egg', 'C:\WINDOWS\system32\python27.zip', 'C:\Python27\DLLs', 'C:\Python27\lib', 'C:\Python27\lib\plat-win', 'C:\Python27\lib\lib-tk', 'C:\Python27', 'C:\Python27\lib\site-packages', 'C:\Python27\lib\site-packages\PIL'] 
+
+
+
 
 #For Parsing
 import rdflib
