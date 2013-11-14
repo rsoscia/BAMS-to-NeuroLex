@@ -634,6 +634,22 @@ for r in qres.result:
 ##THE CURRENT RESULTS THAT ARE PUBLISHED IN THE tempVTest.csv document belong to
 ##"BASAL GANGLIA QUERY" -- aka the second to last query
 
+#need to isolate the names of the identifiers (terms, names, etc.):
+http://brancusi1.usc.edu/RDF/description
+http://brancusi1.usc.edu/RDF/grossConstituent
+http://brancusi1.usc.edu/RDF/name
+http://brancusi1.usc.edu/RDF/nomenclature
+http://brancusi1.usc.edu/RDF/reference
+http://brancusi1.usc.edu/RDF/species
+http://brancusi1.usc.edu/RDF/workspace
+http://brancusi1.usc.edu/RDF/collatorArgument
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+http://brancusi1.usc.edu/RDF/collatorInvolvement
+http://brancusi1.usc.edu/RDF/abbreviation
+http://brancusi1.usc.edu/RDF/collationDate
+http://brancusi1.usc.edu/RDF/collator
+BAMS_Dict = {"description": , "grossConstituent": , "name": , "nomenclature": , "reference": , "species": , "workspace": , "collatorArgument": , "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": , "collatorInvolvement": , "abbreviation": , "collationDate": , "collator": }
+
 import csv
 
 for r in qres.result:
@@ -647,7 +663,50 @@ for r in qres.result:
 	
 	# need to access each individual part of the triple
 	# making row plural allows for this type of functionality
-	
+	#################################################################
+	#csv.DictWriter.writeheader('subject', 'predicate', 'object')
+	#################################################################
 	c.writerows(qres.result)
 	
+	
+	#lists all of the dialects
+	#csv.list_dialects()
+	#>>>['excel-tab', 'excel']
+	
+	#maximum dialect allowed by parser
+	#csv.field_size_limit()
+	#>>>131072
 
+#########################################################################
+for r in qres.result:
+	sub = str(r[0])
+	pred = str(r[1])
+	obj = str(r[2])
+	
+	
+#need to parse qres.result based on the "," 's .... then we can display them in a graph	
+#my_dict = {"Subject": qres.result[0], "Predicate": qres.result[1], "Object": qres.result[2]}
+BAMS_Dict = {"description": qres.result[0][2], "grossConstituent": qres.result[1][2], "name": qres.result[2][2] , "nomenclature": qres.result[3][2], "reference": qres.result[4][2], "species": qres.result[5][2], "workspace": qres.result[6][2], "collatorArgument": qres.result[7][2], "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": qres.result[8][2], "collatorInvolvement": qres.result[9][2], "abbreviation": qres.result[10][2], "collationDate": qres.result[11][2], "collator": qres.result[12][2]}
+
+with open('mycsvfile.csv', 'wb') as f:  # Just use 'w' mode in 3.x
+    w = csv.DictWriter(f, BAMS_Dict.keys())
+    w.writeheader()
+    w.writerow(BAMS_Dict)
+
+	
+with open('tempVTest.csv', 'rb') as csvfile:
+	dialect = csv.Sniffer().sniff(csvfile.read(1024))
+	csvfile.seek(0)
+	reader = csv.reader(csvfile, dialect)
+	print dialect
+	print str(reader)
+	
+	
+	
+	csv.Sniffer().has_header('tempVTest.csv')
+	#returns true no matter what string is passed
+	#returns false if no string is passed
+	#returns true when csv file is passed
+	
+	#DictWriter.writeheader()
+	#command is used to write headers of the rows
