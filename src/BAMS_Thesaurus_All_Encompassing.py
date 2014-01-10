@@ -331,12 +331,90 @@ for r in qres.result:
 	print str(r[0])
 
 
+#First Triple
+print qres.result[0][0]
+print qres.result[0][1]
+print qres.result[0][2]
+
+#Second Triple
+print qres.result[1][0]
+print qres.result[1][1]
+print qres.result[1][2]
+
+
+
+
+
+	
+
+with open('mycsvfileV1.csv', 'wb') as f:  # Just use 'w' mode in 3.x
+	
+	#First Entire Triple, Second Entire Triple, Third Entire Triple.....
+	#BAMS_Dict = {"Subject": qres.result[0], "Predicate": qres.result[1], "Object": qres.result[2]}
+	
+	
+	#Subject Of First Triple, Predicate Of First Triple, Object Of First Triple.....
+	BAMS_Dict = {"Subject": qres.result[0][0], "Predicate": qres.result[0][1], "Object": qres.result[0][2]}
+	
+	
+	
+	w = csv.DictWriter(f, BAMS_Dict.keys())
+	w.writeheader()
+	w.writerow(BAMS_Dict)
+	
+	
+	
+	
+	
+	
+	
+	#Check To See If A DictWriter Library Of Some Sort Is Required For Access To These Methods
+	
+	
+	#for row in BAMS_DICT:
+    #out_f.write("%s%s" %(delimiter.join([row[name] for name in f]), lineterminator))
+	
+	
+	
+	
+	DictWriter.writerows(...)
+	#w.writerows(qres.result)
+	
 
 
 
 
 
 
+
+
+#Work Up To Here
+#Continue Adding The Additional RDF Content Under the BAMS Dict.. Read documentation before implementing...
+	
+	
+	
+	for r in qres.result:
+		b = iter(r).next()
+		w.writerow(b)
+		
+	
+	
+for r in qres.result:
+	b = iter(r).next()
+	w.writerow(b)
+
+
+for r in qres.result:
+	b = iter(r).next()
+	print b
+
+
+b = iter(qres.result).next()
+print b
+for r in qres.result:
+	b = iter(r).next()
+	print b
+	
 
 
 
@@ -1054,6 +1132,10 @@ for r in qres.result:
 	#maximum dialect allowed by parser
 	#csv.field_size_limit()
 	#>>>131072
+
+
+
+
 
 #########################################################################
 for r in qres.result:
